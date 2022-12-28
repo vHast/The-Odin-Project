@@ -6,7 +6,7 @@ function Book(title, author, pages, read) { // The constructor will take 4 argum
   this.pages = pages
   this.read = read
   this.info = function(){ // This is the syntax to add a function to the object
-    return this.title , this.author, this.pages, this.read // However, I'm not sure if this will be returned
+    return `${this.title} ${this.author} ${this.pages} ${this.read}`; // However, I'm not sure if this will be returned
   };
 }
 
