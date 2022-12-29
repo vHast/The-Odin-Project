@@ -33,3 +33,20 @@ const newPrinter = new PrintStuff("Umbrella document");
 newPrinter.print()
 
 // newPrinter now has .print() function and uses PrintStuff as constructor
+
+// Constructor
+
+function Account() { // Constructor
+}
+
+var userAccount = new Account(); // Creates a new instance of Account named userAccount
+console.log(userAccount) // Logs the object 
+console.log(userAccount.constructor) // Shows the constructor of the object
+
+// ** Prototype attribute of Objects created with a Constructor function **
+
+function NewerAccount() {
+};
+
+var userAccount = new NewerAccount();
+var userAccount = {name: "Mike"};
