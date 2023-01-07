@@ -51,12 +51,14 @@ function NewerAccount() {
 var userAccount = new NewerAccount();
 var userAccount = {name: "Mike"};
 
-// 
+// Constructor initialization
 
 function Student(name, grade) {
   this.name = name
   this.grade = grade
 }
+
+// These instances are added after the constructor, all the prototypes will inherit these functions
 
 Student.prototype.sayName = function() {
   console.log(this.name)
@@ -65,3 +67,24 @@ Student.prototype.sayName = function() {
 Student.prototype.goToProm = function() {
   console.log("Eh.. go to prom?")
 }
+
+// Recommended Method for Prototypal Inheritance
+
+function Student() {
+  // Constructor
+}
+
+Student.prototype.sayName = function() {
+  console.log(this.name)
+}
+
+function EighthGrader(name) {
+  this.name = name,
+  this.grade = 8
+}
+
+EighthGrader.prototype = Object.create(Student.prototype)
+
+const carl = new EighthGrader("carl")
+carl.sayName() // Carl
+console.log(carl.grade) // 8
