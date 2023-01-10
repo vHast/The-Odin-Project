@@ -75,16 +75,39 @@ function Student() {
 }
 
 Student.prototype.sayName = function() {
-  console.log(this.name)
+  console.log(this.name) 
 }
 
-function EighthGrader(name) {
+function EighthGrader(name) { // New constructor
   this.name = name,
   this.grade = 8
 }
 
-EighthGrader.prototype = Object.create(Student.prototype)
+EighthGrader.prototype = Object.create(Student.prototype) //EightGrader inherits all the properties from Student
 
 const carl = new EighthGrader("carl")
 carl.sayName() // Carl
-console.log(carl.grade) // 8
+console.log(carl.grade) // 8 , this is a property that was previously available in the Student constructor
+
+// * Write an object constructor and instantiate the object *
+
+function Animal() {
+  this.legs = 4
+};
+
+let rabbit = new Animal();
+console.log(rabbit.legs)
+
+// * Describe what a prototype is and how it can be used *
+
+// Is a special type of enumerable object to which additional properties can be attached to which will be shared across all the instances of it's constructor function
+
+Animal.prototype.race = "Husky";
+
+// We have added the race to the rabbit var while creating a new property on the Animal constructor
+
+console.log(rabbit.race)
+
+// * Prototypal inheritance *
+
+te
