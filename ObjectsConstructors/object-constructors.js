@@ -109,5 +109,3 @@ Animal.prototype.race = "Husky";
 console.log(rabbit.race)
 
 // * Prototypal inheritance *
-
-te
