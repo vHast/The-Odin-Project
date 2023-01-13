@@ -109,3 +109,24 @@ Animal.prototype.race = "Husky";
 console.log(rabbit.race)
 
 // * Prototypal inheritance *
+
+// With this example we determine the prototypal inheritance
+
+let anotherAnimal = {
+  eats: true,
+  walk() {
+    // Empty function
+  }
+}
+
+let anotherRabbit = {
+  __proto__ : anotherAnimal, //We set the prototype as anotherAnimal
+};
+
+anotherRabbit.walk = function() {
+  console.log("Rabbit! Bounce-bounce"); // We modify the method
+}
+
+anotherRabbit.walk(); // The modified method is the one that lasts
+
+//However, with the __proto__ attribute we set its prototype as the one we desire, this one is a legacy attribute and should not be used
