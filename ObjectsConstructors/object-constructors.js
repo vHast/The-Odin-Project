@@ -130,3 +130,18 @@ anotherRabbit.walk = function() {
 anotherRabbit.walk(); // The modified method is the one that lasts
 
 //However, with the __proto__ attribute we set its prototype as the one we desire, this one is a legacy attribute and should not be used
+
+// *Accessor properties are an exception, as assignment is handled by a setter function, so writing to such a property is actually the same as calling a function
+
+let user = {
+  name: "John",
+  surname: "Smith",
+
+  set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+  },
+
+  get fullName() {
+    return 
+  }
+};
